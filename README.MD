@@ -23,9 +23,6 @@ Each tool in this toolbox comes with its own documentation. Refer to the individ
 ## Tools Included
 
 ### Network Tools
-- **modbus_scanner.py**: Scans for Modbus devices and vulnerabilities
-- **dnp3_analyzer.py**: Analyzes DNP3 protocol traffic
-- **iec61850_monitor.py**: Monitors IEC 61850 communications
 
 ### Vulnerability Assessment
 - **EWS scheadule tasks scanner.py**: Scheadule tasks vulnerability scanner for EWS devices
