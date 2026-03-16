@@ -8,28 +8,23 @@ This toolbox provides cybersecurity professionals and ICS operators with essenti
 
 ## Features
 
-- **Scheadule Tasks Scanning**: Script for checking any tasks created that can enable persistence of malware.
+- **Scheadule Tasks Scanner**: Script for checking any tasks created that can enable persistence of malware.
 
 ## Installation
 
 ### Prerequisites
+- PowerShell 5.1 or later.
+- Administrator privileges for system-level audits.
+
 
 ## Usage
 
 Each tool in this toolbox comes with its own documentation. Refer to the individual tool directories for specific usage instructions.
 
-### General Usage
-
 ## Tools Included
 
-### Network Tools
-
 ### Vulnerability Assessment
-- **EWS scheadule tasks scanner.py**: Scheadule tasks vulnerability scanner for EWS devices
-
-### Monitoring & Detection
-
-### Forensic Tools
+- **Audit-SuspiciousTasks.ps1**: Scheduled tasks vulnerability scanner for EWS devices
 
 ## Security Considerations
 
