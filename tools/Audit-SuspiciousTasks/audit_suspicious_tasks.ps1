@@ -5,7 +5,17 @@
 # Author: Murilo Henrique
 # ---------------------------------------------------------------------------
 
-Write-Host "--- Beginning Security Audit on Scheadules Tasks ---" -ForegroundColor Cyan
+Param(
+    [# Set the days to look back for task creation events (default: 7)]
+    [Parameter(HelpMessage="Enter the number of days to audit")]
+    [int]$Days = 7
+    ]
+)
+
+$RecentDate = (Get-Date).AddDays(-$Days)
+
+Write-Host "--- Beginning Security Audit on Schedules Tasks (Last $Days days) ---" -ForegroundColor Cyan
+
 
 # 1. Search for tasks configured to "Wake the PC"
 $WakeTasks = Get-ScheduledTask | Where-Object { $_.Settings.WakeToRun }
@@ -30,7 +40,6 @@ if ($SuspiciousTasks) {
 
 # 3. List tasks created in the last 7 days using Event Logs
 
-$RecentDate = (Get-Date).AddDays(-7)
 $OutputPath = "$HOME\Documents\TaskAudit_Report_$(Get-Date -Format 'yyyyMMdd_HHmm').csv"
 
 Write-Host "[i] Starting log extraction... await." -ForegroundColor Cyan
