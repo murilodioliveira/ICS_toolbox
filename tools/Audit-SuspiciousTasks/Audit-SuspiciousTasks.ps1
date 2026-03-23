@@ -6,10 +6,8 @@
 # ---------------------------------------------------------------------------
 
 Param(
-    [# Set the days to look back for task creation events (default: 7)]
     [Parameter(HelpMessage="Enter the number of days to audit")]
     [int]$Days = 7
-    ]
 )
 
 $RecentDate = (Get-Date).AddDays(-$Days)
@@ -42,7 +40,7 @@ if ($SuspiciousTasks) {
 
 $OutputPath = "$HOME\Documents\TaskAudit_Report_$(Get-Date -Format 'yyyyMMdd_HHmm').csv"
 
-Write-Host "[i] Starting log extraction... await." -ForegroundColor Cyan
+Write-Host "[i] Starting log extraction... wait." -ForegroundColor Cyan
 
 # 3.1. Search on Security Event for task creation (ID 4698)
 $SecurityEvents = Get-WinEvent -FilterHashtable @{
